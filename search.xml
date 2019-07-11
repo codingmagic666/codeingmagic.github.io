@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Linux下深度学习开发环境的构建Adasdas]]></title>
+    <url>%2F2019%2F07%2F09%2F1%2F</url>
+    <content type="text"><![CDATA[笔者使用的是实验室配置的服务器，主要是ubuntu server系统下 深度学习开发环境的基本构建，这些事笔者在自己配置的过程中经历的困难，写的有错误的地方还望见谅 一.linux下pycharm的安装 下载Linux版本的pycharm，下载的community版本的，将其放到Downloads目录下 打开命令行 ，首先进入到Downloads下 cd ~/Downloads 然后将压缩包解压 tar -xvzf pycharm-community-2018.3.3.tar.gz -C ~ 解压后的文件夹自动放在根目录下，可以在根目录看到 然后进入到这个解压后的文件夹下的bin文件夹，安装需要的pycharm.sh文件放在里面 cd ~/pycharm-community-2018.3.3/bin 下一步就是直接安装pycharm sh pycharm.sh &amp; 等待运行结束即可看到pycharm的主界面&nbsp; 安装即结束 二.anaconda的安装 其安装的方法与pycharm的方法大同小异 下载好对应版本的anaconda后，笔者推荐使用Python3.6版本下的，即Anaconda3-4.3.0-Linux-x86_64.sh，可以带清华镜像中找到&nbsp; 下图是常见的Python与anaconda的对应关系 bash Anaconda3-4.3.0-Linux-x86_64.sh 即可完成anaconda的安装 三.在anaconda中安装TensorFlow的虚拟环境 在系统上安装完成anaconda 通过anaconda创建虚拟环境 conda create -n tensorflow python=3.6 anaconda 会在envs中创建tensorflow文件夹 这里创建了一个叫做tensorflow的虚拟环境，名字是可以任意改变的，并在这个虚拟环境中安装了python3.6，同时安装所需的常用的模块，numpy，scipy等，节约很多时间。这里的Python3.6与anaconda没有关系，可以anaconda是3.6的，在虚拟环境中安装Python3.5下的环境 conda info --envs 即可看到我们创建的tensorflow的虚拟环境 查看cuda cudnn版本 cat /usr/local/cuda-9.0/version.txtcat /usr/local/cuda-9.0/include/cudnn.h | grep CUDNN_MAJOR -A 2 查看当前虚拟环境cuda cudnn版本 conda list 激活虚拟环境 在Windows中使用 activate tensorflow 在Linux中使用 source activate tensorflow 注意两者的区别 更换清华源 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ 安装tensorflow 笔者的cuda为9&nbsp; cudnn为7，对应着要安装1.5版本的tensorflow conda install --channel https://conda.anaconda.org/anaconda tensorflow-gpu=1.5.0 pip3 install tensorflow-gpu==1.5 -i https://pypi.tuna.tsinghua.edu.cn/simple 笔者尝试了很多次用pip安装tensorflow 都宣告失败，所以建议使用conda的方式安装tensorflow 最后在虚拟环境下进入Python环境， import tensorflow 如图，tensorflow即安装成功 四.在pycharm中虚拟环境及interpreter设置 打开左上角的File 选择setting 选中project interpreter，图为笔者已经配好的样式 选中右上角的小齿轮，点击Add 点击页面中的conda environment，同时选中 existing environment&nbsp; &nbsp;勾中Make available to all projects 然后在你的anaconda下envs文件夹中，找到你自己创建的虚拟环境，在其中的bin文件夹中找到Python3.6这个文件（笔者创建的是python3.6下的TensorFlow），选中即可 如图，即完成interpreter的配置]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[ABC]]></title>
+    <url>%2F2019%2F07%2F09%2FABC%2F</url>
+    <content type="text"><![CDATA[SONGTYHING]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F07%2F09%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
