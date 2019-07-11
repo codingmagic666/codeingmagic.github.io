@@ -442,126 +442,22 @@
       
         
           
-            <p>笔者使用的是实验室配置的服务器，主要是ubuntu server系统下 深度学习开发环境的基本构建，这些事笔者在自己配置的过程中经历的困难，写的有错误的地方还望见谅</p><p></p>
-<h3><a name="t0"></a>一.linux下pycharm的安装</h3>
+            <p>
+              笔者使用的是实验室配置的服务器，主要是ubuntu server系统下 深度学习开发环境的基本构建，这些事笔者在自己配置的过程中经历的困难，写的有错误的地方还望见谅
+一.linux下pycharm的安装
 
-<ul><li>下载Linux版本的<a href="https://www.jetbrains.com/pycharm/download/#section=linux" rel="noopener" target="_blank">pycharm</a>，下载的community版本的，将其放到Downloads目录下</li>
-</ul><p><img alt class="has" src="https://img-blog.csdnimg.cn/20190121213933129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzUxMTEyNg==,size_16,color_FFFFFF,t_70"></p>
-
-<p>打开命令行 ，首先进入到Downloads下</p>
-
-<pre class="has" name="code"><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/Downloads</code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p>然后将压缩包解压</p>
-
-<pre class="has" name="code"><code class="hljs css"><span class="hljs-selector-tag">tar</span> <span class="hljs-selector-tag">-xvzf</span> <span class="hljs-selector-tag">pycharm-community-2018</span><span class="hljs-selector-class">.3</span><span class="hljs-selector-class">.3</span><span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span> <span class="hljs-selector-tag">-C</span> ~</code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p>解压后的文件夹自动放在根目录下，可以在根目录看到</p>
-
-<p><img alt class="has" src="https://img-blog.csdnimg.cn/20190121214651386.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzUxMTEyNg==,size_16,color_FFFFFF,t_70"></p>
-
-<p>然后进入到这个解压后的文件夹下的bin文件夹，安装需要的pycharm.sh文件放在里面</p>
-
-<pre class="has" name="code"><code class="hljs javascript">cd ~<span class="hljs-regexp">/pycharm-community-2018.3.3/</span>bin</code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p>下一步就是直接安装pycharm</p>
-
-<pre class="has" name="code"><code class="hljs css"><span class="hljs-selector-tag">sh</span> <span class="hljs-selector-tag">pycharm</span><span class="hljs-selector-class">.sh</span> &amp;</code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p>等待运行结束即可看到pycharm的主界面&nbsp; 安装即结束</p>
-
-<h2><a name="t1"></a>二.anaconda的安装</h2>
-
-<p>其安装的方法与pycharm的方法大同小异</p>
-
-<p>下载好对应版本的anaconda后，笔者推荐使用Python3.6版本下的，即<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" rel="noopener" target="_blank">Anaconda3-4.3.0-Linux-x86_64.sh</a>，可以带清华镜像中找到&nbsp; 下图是常见的Python与anaconda的对应关系</p>
-
-<p><img alt class="has" height="235" src="https://img-blog.csdnimg.cn/2019012121512595.png" width="278"></p>
-
-<pre class="has" name="code"><code class="hljs css"><span class="hljs-selector-tag">bash</span> <span class="hljs-selector-tag">Anaconda3-4</span><span class="hljs-selector-class">.3</span><span class="hljs-selector-class">.0-Linux-x86_64</span><span class="hljs-selector-class">.sh</span></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p>即可完成anaconda的安装</p>
-
-<h2><a name="t2"></a>三.在anaconda中安装TensorFlow的虚拟环境</h2>
-
-<ul><li>在系统上安装完成anaconda</li>
-</ul><p>通过anaconda创建虚拟环境</p>
-
-<pre class="has" name="code"><code class="hljs sql">conda <span class="hljs-keyword">create</span> -n tensorflow python=<span class="hljs-number">3.6</span> anaconda</code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p>会在envs中创建tensorflow文件夹</p>
-
-<p>这里创建了一个叫做tensorflow的虚拟环境，名字是可以任意改变的，并在这个虚拟环境中安装了python3.6，同时安装所需的常用的模块，numpy，scipy等，节约很多时间。这里的Python3.6与anaconda没有关系，可以anaconda是3.6的，在虚拟环境中安装Python3.5下的环境</p>
-
-<pre class="has" name="code"><code class="hljs sql">conda info <span class="hljs-comment">--envs</span></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p><img alt class="has" src="https://img-blog.csdnimg.cn/20190121220148602.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzUxMTEyNg==,size_16,color_FFFFFF,t_70"></p>
-
-<p>即可看到我们创建的tensorflow的虚拟环境</p>
-
-<ul><li>查看cuda cudnn版本</li>
-</ul><pre class="has" name="code"><code class="hljs perl"><ol class="hljs-ln"><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">cat /usr/<span class="hljs-keyword">local</span>/cuda-<span class="hljs-number">9.0</span>/version.txt</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">cat /usr/<span class="hljs-keyword">local</span>/cuda-<span class="hljs-number">9.0</span>/include/cudnn.h | <span class="hljs-keyword">grep</span> CUDNN_MAJOR -A <span class="hljs-number">2</span></div></div></li></ol></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<ul><li>查看当前虚拟环境cuda cudnn版本</li>
-</ul><p><img alt class="has" src="https://img-blog.csdnimg.cn/20190508143347648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzUxMTEyNg==,size_16,color_FFFFFF,t_70"></p>
-
-<pre class="has" name="code"><code class="hljs php">conda <span class="hljs-keyword">list</span></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<ul><li>激活虚拟环境</li>
-</ul><p>在Windows中使用</p>
-
-<pre class="has" name="code"><code class="hljs">activate tensorflow</code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p>在Linux中使用</p>
-
-<pre class="has" name="code"><code class="hljs bash"><span class="hljs-built_in">source</span> activate tensorflow</code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p>注意两者的区别</p>
-
-<ul><li>更换清华源</li>
-</ul><pre class="has" name="code"><code class="hljs cs">conda config --<span class="hljs-keyword">add</span> channels https:<span class="hljs-comment">//mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<ul><li>安装tensorflow 笔者的cuda为9&nbsp; cudnn为7，对应着要安装1.5版本的tensorflow</li>
-</ul><pre class="has" name="code"><code class="hljs sql">conda <span class="hljs-keyword">install</span> <span class="hljs-comment">--channel https://conda.anaconda.org/anaconda tensorflow-gpu=1.5.0</span></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<pre class="has" name="code"><code class="hljs java">pip3 install tensorflow-gpu==<span class="hljs-number">1.5</span> -i https:<span class="hljs-comment">//pypi.tuna.tsinghua.edu.cn/simple</span></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p>笔者尝试了很多次用pip安装tensorflow 都宣告失败，所以建议使用conda的方式安装tensorflow</p>
-
-<p>最后在虚拟环境下进入Python环境，</p>
-
-<pre class="has" name="code"><code class="hljs swift"><span class="hljs-keyword">import</span> tensorflow</code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-
-<p><img alt class="has" src="https://img-blog.csdnimg.cn/20190121220734616.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzUxMTEyNg==,size_16,color_FFFFFF,t_70"></p>
-
-<p>如图，tensorflow即安装成功</p>
-
-<h2><a name="t3"></a>四.在pycharm中虚拟环境及interpreter设置</h2>
-
-<p>打开左上角的File 选择setting</p>
-
-<p><img alt class="has" src="https://img-blog.csdnimg.cn/20190121221144161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzUxMTEyNg==,size_16,color_FFFFFF,t_70"></p>
-
-<p>选中project interpreter，图为笔者已经配好的样式</p>
-
-<p>选中右上角的小齿轮，点击Add</p>
-
-<p><img alt class="has" src="https://img-blog.csdnimg.cn/20190121221443621.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzUxMTEyNg==,size_16,color_FFFFFF,t_70"></p>
-
-<p>点击页面中的conda environment，同时选中 existing environment&nbsp; &nbsp;勾中Make available to all projects</p>
-
-<p><img alt class="has" src="https://img-blog.csdnimg.cn/20190121221655107.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzUxMTEyNg==,size_16,color_FFFFFF,t_70"></p>
-
-<p>然后在你的anaconda下envs文件夹中，找到你自己创建的虚拟环境，在其中的bin文件夹中找到Python3.6这个文件（笔者创建的是python3.6下的TensorFlow），选中即可</p>
-
-<p><img alt class="has" src="https://img-blog.csdnimg.cn/20190121221944520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzUxMTEyNg==,size_16,color_FFFFFF,t_70"></p>
-
-<p>如图，即完成interpreter的配置</p>
-                                    
-                    
-    
-
+下载Linux版本的pycharm，下载的community版本的，将其放到Downloads
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/09/1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -709,9 +605,20 @@
       
         
           
-            <p>SONGTYHING</p>
+            <p>
+              SONGTYHING
 
+              
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/09/ABC/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -855,21 +762,19 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            <p>
+              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/09/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
