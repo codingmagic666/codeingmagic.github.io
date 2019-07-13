@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[essential第一章整理]]></title>
+    <url>%2F2019%2F07%2F13%2F1-1%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>c++</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[try]]></title>
     <url>%2F2019%2F07%2F13%2Ftry%2F</url>
     <content type="text"><![CDATA[first time]]></content>
