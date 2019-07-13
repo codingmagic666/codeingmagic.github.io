@@ -2,11 +2,6 @@
 <search>
   <entry>
     <title><![CDATA[第一章整理]]></title>
-    <url>%2F2019%2F07%2F13%2F%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%95%B4%E7%90%86%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[第一章整理]]></title>
     <url>%2F2019%2F07%2F13%2Fessential%E7%AC%AC%E4%B8%80%E7%AB%A0%2F</url>
     <content type="text"><![CDATA[1.array和vector 定义array，必须指定array的元素类型，名称，指定尺度的大小，并且这个大小必须是常量表达式 vector本身的大小就是可变的，因此不一定要指定大小的时候为常量表达式 //arrayconst int seq_size=18; //定义一个常量表达式int pell_seq[seq_size]; //vectorint a=10; //变量vector&lt;int&gt; b(a); 同时还可以让计算机自行计算array的大小 int elem_seq[]={1,2,3,4,5,6,7,8,9}; 2.指针 指针调用成员函数： vector&lt;int&gt; fib;vector&lt;int&gt; *pv=0;pv=&amp;fib; //成员函数的调用方式 fib.empty()pv-&gt;empty() 3.文件的读写 文件的输出 #include&lt;fstream&gt;ofstream outfile("1.txt"); //定义了一个ofstream类的outfile的对象//没有ofstream outfile ="1.txt"的写法int a=3;outfile &lt;&lt; a; //相当于把a的值送给outfile 当没有1.txt文件的时候，会创建这个文件，并输出 同时outfile的类型为bool型，可以判断文件是否成功打开 if(!outfile) //如果文件没有成功打开，则为false 文件的输入 ifstream infile("2.txt")int a;infile &gt;&gt; a; //将infile的值送给awhile(infile &gt;&gt;a) 同时 cin&gt;&gt;的终止符为空格、tab、回车 &nbsp;]]></content>
       <categories>
@@ -29,20 +24,5 @@
         <tag>表格</tag>
         <tag>表单验证</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F07%2F12%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[adfg]]></title>
-    <url>%2F2019%2F07%2F12%2Fadfg%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[ABC]]></title>
-    <url>%2F2019%2F07%2F09%2FABC%2F</url>
-    <content type="text"><![CDATA[SONGTYHING]]></content>
   </entry>
 </search>
