@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo搭建]]></title>
+    <url>%2F2019%2F07%2F13%2Fhexo%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[1.hexo首页不显示全文 希望达到的效果 首页显示文章列表，列表里的每一篇文章只显示预览，不显示全文。 进入hexo博客项目的themes/next目录 用文本编辑器打开_config.yml文件 搜索"auto_excerpt",找到如下部分： # Automatically Excerpt. Not recommand.# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.auto_excerpt: enable: false length: 150 把enable改为对应的false改为true，然后hexo d -g，再进主页，问题就解决了！ 2.添加Live2D小宠物 安装Live2D插件 npm install --save hexo-helper-live2d npm install --save live2d-widget-model-&lt;你喜欢的模型名字&gt; &nbsp;下面是常用的模型 可以在此预览 live2d-widget-model-chitoselive2d-widget-model-epsilon2_1live2d-widget-model-gflive2d-widget-model-haru/01 (use npm install --save live2d-widget-model-haru)live2d-widget-model-haru/02 (use npm install --save live2d-widget-model-haru)live2d-widget-model-harutolive2d-widget-model-hibikilive2d-widget-model-hijikilive2d-widget-model-izumilive2d-widget-model-koharulive2d-widget-model-mikulive2d-widget-model-ni-jlive2d-widget-model-nicolive2d-widget-model-nietzschelive2d-widget-model-nipsilonlive2d-widget-model-nitolive2d-widget-model-shizukulive2d-widget-model-tororolive2d-widget-model-tsumikilive2d-widget-model-unitychanlive2d-widget-model-wankolive2d-widget-model-z16 修改配置文件 在博客根目录的_config.yml配置文件中添加下面的内容 #Live2D动画live2d: enable: true scriptFrom: local pluginRootPath: live2dw/ pluginJsPath: lib/ pluginModelPath: assets/ tagMode: false debug: false model: use: live2d-widget-model-shizuku display: position: right width: 150 height: 300 mobile: show: true 主要参数说明 enable //是否使用 model: use: live2d-widget-model-shizuku //要使用的模型名称 display: position: right //显示的位置 width: 150&nbsp;&nbsp; &nbsp;//宽度 height: 150&nbsp;&nbsp; &nbsp;//高度 mobile: show: true&nbsp;&nbsp; &nbsp;//移动端是否显示 &nbsp; 3.添加分类以及标签 nexT主题的文章分类和标签设置，其他主题也应该是类似的。添加成功后会在侧边栏或导航栏生成“分类”和“标签”这两个选项 &nbsp; 见如下博客以及这篇 &lt;/div&gt;]]></content>
+      <categories>
+        <category>环境搭建</category>
+        <category>hexo博客</category>
+      </categories>
+      <tags>
+        <tag>环境搭建</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[conda常用命令整理]]></title>
     <url>%2F2019%2F07%2F13%2Fconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%2F</url>
     <content type="text"><![CDATA[安装anaconda发行版中所有的包 conda install anaconda 查看当前虚拟环境cuda cudnn版本 &nbsp;conda list 并查看 cat /usr/local/cuda-9.0/version.txtcat /usr/local/cuda-9.0/include/cudnn.h | grep CUDNN_MAJOR -A 2 更换清华源 不同的安装包存在的位置可能不一样，例如cuda不同版本的安装包分别在free和main里面 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ &nbsp; 安装指定版本的tensorflow conda install --channel https://conda.anaconda.org/anaconda tensorflow-gpu=1.5.0 或者 pip3 install tensorflow-gpu==1.5 -i https://pypi.tuna.tsinghua.edu.cn/simple 移除虚拟环境 conda env remove -n python35 安装opencv conda install --channel https://conda.anaconda.org/menpo opencv3 pip使用国内源 加上 -i https://pypi.tuna.tsinghua.edu.cn/simple 例如安装 例如： pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider 这样就会从清华这边的镜像去安装pyspider库。 安装8.0版本的cuda&nbsp; 安装固定版本的cuda cudnn conda install cudatoolkit=8.0 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/linux-64/ conda install cudnn=7.0.5 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/linux-64/ &nbsp; &nbsp;9.0版本以上的cuda&nbsp; &nbsp;可以查看清华源中有没有cuda的对应版本 conda install cudatoolkit=9.0 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/linux-64/ conda install cudnn=7.1.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/linux-64/ pytorch torchvision指定版本 conda install pytorch=0.3.0 torchvision=0.2.0 -c soumith &nbsp;]]></content>
