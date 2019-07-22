@@ -5,14 +5,12 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="essential第三章, 机智的小cc">
-    <meta name="description" content="
-
-1.指针的运算
+    <meta name="description" content="1.指针的运算
 
 可以对指针使用下标运算符
 下标运算符就相当于在起始地址的基础上加上索引值，产生某个元素的地址
 
-#include&amp;lt;iostream&amp;gt;using namespace std;int main(){    in">
+#include&amp;lt;iostream&amp;gt;using namespace std;int main(){    int ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -443,9 +441,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="htmledit_views" id="content_views">
-
-<h2><a name="t0"></a>1.指针的运算</h2>
+                <h2><a name="t0"></a>1.指针的运算</h2>
 
 <ul><li>可以对指针使用下标运算符</li>
 </ul><p>下标运算符就相当于在起始地址的基础上加上索引值，产生某个元素的地址</p>
@@ -524,7 +520,7 @@
 <p>使用bind1st将值绑定到第一操作数，bind2nd将值绑定到第二操作数。</p>
 
 <pre class="has" name="code"><code class="hljs cpp"><ol class="hljs-ln"><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; filter(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;vec,<span class="hljs-keyword">int</span> value,less&lt;<span class="hljs-keyword">int</span>&gt; &amp;lt){</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; nvec;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; ::iterator iter=nvec.begin();</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">while</span>((iter=find_if(iter,nvec.end(),bind2nd(lt,value)))!=nvec.end()){</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        nvec.push_back(*iter);</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        iter++;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> </div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">return</span> nvec;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">}</div></div></li></ol></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>
-</div>
+
             </div>
             <hr/>
 
@@ -799,9 +795,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-
-1.hexo首页不显示全文
+                            1.hexo首页不显示全文
 
 希望达到的效果
 
@@ -809,7 +803,7 @@
 
 进入hexo博客项目的themes/next目录
     用文本编辑器打开_config.yml文件
-    搜索"auto
+    搜索"auto_e
                         
                     </div>
                     <div class="publish-info">
