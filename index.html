@@ -257,6 +257,7 @@
 </header>
 
 
+
 <style>
     .carousel-control {
         width: 45px;
@@ -353,6 +354,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 
 
+
 </div>
         </div>
     </div>
@@ -425,6 +427,41 @@ $(function () {
 </div>
                     
 
+                    
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="title center-align">
+        <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"Shape of My Heart","artist":"Backstreet Boys","url":"/medias/music/Shape Of My Heart.mp3","cover":"/medias/music/1.jpg"},{"name":"告白♡","artist":"传琦SAMA","url":"/medias/music/告白♡.mp3","cover":"/medias/music/2.jpg"},{"name":"小瓶子","artist":"林俊杰","url":"/medias/music/小瓶子.mp3","cover":"/medias/music/3.jpg"}]')
+    });
+});
+</script>
                     
 
                     
@@ -911,6 +948,7 @@ conda install anaconda
     <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=123123123" class="tooltipped" data-tooltip="QQ联系我: 123123123" data-position="top" data-delay="50">
         <i class="fa fa-qq"></i>
     </a>
+
 
 
 
